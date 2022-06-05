@@ -2,15 +2,19 @@ package com.project.tests;
 
 import com.project.utilities.ConfigurationReader;
 import com.project.utilities.Driver;
-import com.project.utilities.HandleWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class Task1 {
+
+    @AfterTest
+    public void tearDownMethod(){
+        Driver.getDriver().close();
+    }
 
     @Test
     public void amazonTest() {
